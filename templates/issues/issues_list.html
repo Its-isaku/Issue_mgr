@@ -1,0 +1,112 @@
+<!--? extends form base.html -->
+{% extends "base.html" %}
+
+<!--? loads static -->
+{% load static %}
+
+<!--? Title -->
+{% block title %} Tables {% endblock title %}
+
+<!--? Kanban Tables -->
+{% block content %}
+    
+    <!--? Issue header -->
+    <div class="issueTableHeader">
+        <div class="issueHeaderTitle">
+            <i class="fa-solid fa-table-columns"></i>
+            <h2>Kanban Tables</h2>
+        </div>
+        <div class="issueHeaderSubtitle">
+            <p>Manage your projects visually and efficiently</p>
+        </div>
+    </div>
+
+    <!--? Kanban Table -->
+    <div class="TablesContainer">
+        
+    </div>
+
+    <!--? Add Table Button -->
+    <div class="addTableBtnContainer">
+        <button class="addTableBtn" id="addTableBtn">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Table</span>
+        </button>
+    </div>
+
+{% endblock content %}
+
+<!--? Footer -->
+{% block footer %} {% endblock footer %}
+
+<!--& cards -->
+<!-- <div class="card">
+    <h4 class="card-title">Create marketing materials</h4>
+    <div class="card-meta">
+        <div class="card-assignee">
+            <span class="assignee-avatar">👤</span>
+            <span class="assignee-name">Nate Martins</span>
+        <
+        <div class="card-date">December 30, 2024</div>
+        <div class="card-footer">
+            <span class="card-priority priority-high">ALTA</span>
+            <span class="card-points">8 pts</span>
+            <button class="card-delete">🗑️</button>
+        </div>
+    </div>
+</div> -->
+
+<!--& Table template -->
+<!-- <div class="kanbanContainer">
+    <div class="tableContainerTitle">
+        TAble Title will apere here 
+        <label id="tableTitle"> </label>
+    </div>
+
+    <div class="tableContet">
+        To Do Column 
+        <div class="column column-gray">
+            <div class="column-header">
+                <h3 class="column-title">To Do</h3>
+                <span class="task-count" id="TodoCardCount"></span>
+            </div>
+            <button class="add-card-btn">+ New page</button>
+            <div class="cards-container" id="todoCardsContainer">
+                Cards will apere here 
+            </div>
+        </div>
+        
+        In Progress Column 
+        <div class="column column-blue">
+            <div class="column-header">
+                <h3 class="column-title">In Progress</h3>
+                <span class="task-count" id="InProgressCardCount"></span>
+            </div>
+            <button class="add-card-btn">+ New page</button>
+            <div class="cards-container" id="inProgressCardsContainer">
+                Cards will apere here 
+            </div>
+        </div>
+        
+        Done Column
+        <div class="column column-purple">
+            <div class="column-header">
+                <h3 class="column-title">Done</h3>
+                <span class="task-count" id="DoneCardsCount"></span>
+            </div>
+            <button class="add-card-btn">+ New page</button>
+            <div class="cards-container" id="doneCardsContainer">
+                Cards will apere here 
+            </div>
+        </div>
+        
+        Add new section Btn
+        <div class="add-section-container">
+            <button class="add-section-btn" id="addSectionBtn">+ Add another list</button>
+        </div>  
+    </div>
+</div> -->
+
+
+
+

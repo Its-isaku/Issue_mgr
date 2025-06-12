@@ -1,0 +1,37 @@
+<!--? extends from base -->
+{% extends "base.html" %}
+
+<!--? load static -->
+{% load static %}
+
+<!--? Title -->
+{% block title %}Logged Out{% endblock title %}
+
+{% block content %}
+
+<!--* Enhanced logout confirmation container -->
+<div class="form-container">
+    <div class="form-wrapper">
+        <!--? Header with success styling -->
+        <div class="form-header">
+            <h1>Successfully Logged Out</h1>
+        </div>
+        
+        <!--* Body with confirmation message -->
+        <div class="form-body text-center">
+            <!--? Success message -->
+            <div class="alert alert-success">
+                <h5>You have successfully logged out</h5>
+                <p class="mb-0">Come back soon! We hope to see you again.</p>
+            </div>
+            
+            <!--* Navigation buttons -->
+            <div class="mt-4">
+                <a href="{% url 'home' %}" class="btn btn-primary me-2">Go to Home</a>
+                <a href="{% url 'login' %}" class="btn btn-success">Log In Again</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -9,3 +9,4 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'                   #* Template for the signup page
     form_class = CustomUserCreationForm                          #* Form for user registration
     success_url = reverse_lazy('login')                          #* Redirect to login page after successful registration
+    

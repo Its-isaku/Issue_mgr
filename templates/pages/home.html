@@ -1,13 +1,75 @@
 <!--? extends form base.html -->
 {% extends "base.html" %}
 
+<!--? loads static -->
+{% load static %}
+
 <!--? Title -->
 {% block title %} Home {% endblock title %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-12">
-        <h1>Welcome to the Mini Challenge</h1>
-        <p>testing</p>
+    <!--? home header  -->
+    <div class="homeHeader">
+        <h1>Manage your Projects</h1>
+        <p>Organize, track, and complete your tasks with our powerful and intuitive Kanban tool.</p>
+        <!--! add Issues Table anker here -->
+        <a href="{% url 'issues_list' %}"><i class="fa-solid fa-rocket"></i>Start Now</a>
     </div>
+
+    <!--? home info  -->
+    <div class="homeInfo">
+        <h1>Why choose Issue Manager?</h1>
+        <p>Designed for teams seeking simplicity and efficiency in project management.</p>
+
+        <div class="homeCardContainer">
+            <div class="homeCard">
+                <i class="fa-solid fa-table-columns"></i>
+                <h3>Tablero Kanban</h3>
+                <p>Visualiza el flujo de trabajo con tableros Kanban intuitivos. Arrastra y suelta tareas entre columnas fácilmente.</p>
+            </div>
+
+            <div class="homeCard">
+                <i class="fa-solid fa-users"></i>
+                <h3>Colaboración en Equipo</h3>
+                <p>Asigna tareas a miembros del equipo, establece prioridades y mantén a todos sincronizados.</p>
+            </div>
+
+            <div class="homeCard">
+                <i class="fa-solid fa-arrows-up-to-line"></i>
+                <h3>Seguimiento de Progreso</h3>
+                <p>Monitorea el progreso de tus proyectos con puntos de historia y métricas de rendimiento.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--? home stats  -->
+    <div class="homeStats">
+        <div class="statCard icon1">
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3>1000+</h3>
+            <p>Proyectos Gestionados</p>
+        </div>
+
+        <div class="statCard icon2">
+            <i class="fa-solid fa-users"></i>
+            <h3>500+</h3>
+            <p>Usuarios Activos</p>
+        </div>
+
+        <div class="statCard icon3">
+            <i class="fa-solid fa-clock"></i>
+            <h3>24/7</h3>
+            <p>Disponibilidad</p>
+        </div>
+
+        <div class="statCard icon4">
+            <i class="fa-solid fa-star"></i>
+            <h3>4.9/5</h3>
+            <p>Calificación</p>
+        </div>
+    </div>
+
 {% endblock content %}
+
+<!--? Footer -->
+{% block footer %} {% endblock footer %}

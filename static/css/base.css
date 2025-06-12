@@ -1,0 +1,161 @@
+/*? Root */
+/* :root {
+    
+} */
+
+/*? Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logoutBtn{
+    border: none;
+    background-color: inherit;
+}
+
+
+/*? Navbar */
+.navbar{
+    position: sticky;
+    top: .5rem;
+    margin: .2rem 1rem .5rem 1rem;
+    z-index: 1000;
+}
+
+.navDivision{
+    height: 40px;
+    width: 2px;
+}
+
+/*? Navbar - Logo */
+.LogoName{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border-bottom:  4px solid #9c9c9c !important;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    position: relative;
+    z-index: 1001;
+}
+
+.LogoName:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #EEEEEE;
+    border-bottom:  4px solid #9c9c9c !important;
+}
+.LogoName i{
+    font-size: 2rem;
+}
+
+.LogoName a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*? Navbar corners */
+.navStart{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 0 1rem;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 2rem 0 0 2rem;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border-bottom:  4px solid #9c9c9c !important;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+.navStart:hover, .navEnd:hover, .navMiddle:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #EEEEEE;
+    border-bottom:  4px solid #9c9c9c !important;
+}
+
+.navEnd{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 0 1rem;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 0 2rem 2rem 0 ;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border-bottom:  4px solid #9c9c9c !important;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+.navMiddle{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 0 1rem;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border-bottom:  4px solid #9c9c9c !important;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+/*? Navbar - principal Links */
+.principalLinks{
+    display: flex;
+    flex-direction: row;
+}
+
+/*? Navbar - login Links */
+.loginLinks{
+    display: flex;
+    flex-direction: row;
+}
+
+/*? User */
+.user{
+    display: flex;
+    flex-direction: row ;
+    gap: 1rem;
+    align-items: center; 
+}
+
+.user p{
+    margin: 0; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/*? footer */

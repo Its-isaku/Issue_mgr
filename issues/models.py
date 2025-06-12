@@ -1,7 +1,7 @@
 
 #? Necessary imports
 from django.db import models
-from django.contrib.auth.models import get_user_model
+from django.contrib.auth import get_user_model
 from django.urls import reverse
 from accounts.models import Team
 

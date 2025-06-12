@@ -1,0 +1,104 @@
+/*? info */
+.aboutInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.aboutCardContainer{
+    display: flex;
+    flex-wrap: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.aboutCard{
+    background-color: #2c2c2c;
+    border: 1px solid #444444;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 400px;
+    height: 280px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #ffffff;
+}
+
+.aboutCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #353535;
+}
+
+.aboutCard i{
+    color: #2563eb;
+    font-size: 5rem;
+    padding-bottom: 1rem;
+}
+
+/*? stats */
+.aboutStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.aboutCardContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.statCard{
+    background-color: #2c2c2c;
+    border: 1px solid #444444;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 320px;
+    height: 180px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #ffffff;
+}
+
+.statCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #353535;
+}
+
+.statCard i{
+    font-size:2.5rem;
+    padding-bottom: 1rem;
+}
+
+.statCard p{
+    font-size:1rem;
+    padding-bottom: 1rem;
+    color: #828282;
+}
+
+.icon1 i{
+    color: #2563eb;
+}
+
+.icon2 i{
+    color: #16a34a;
+}
+
+.icon3 i{
+    color: #ca8a04;
+}
+
+.icon4 i{
+    color: #e32952;
+}

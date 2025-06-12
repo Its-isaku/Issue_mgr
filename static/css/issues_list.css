@@ -1,0 +1,411 @@
+/*? |-----------------------------Header-----------------------------| */
+
+.issueTableHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    padding: 1rem 0 0 2rem;
+    height: 150px;
+}
+
+.issueHeaderTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2em;   
+}
+
+.issueHeaderTitle h2{
+    font-size: 2.5em;
+}
+
+.issueHeaderTitle i{
+    font-size: 3rem;
+}
+
+.issueHeaderSubtitle p {
+    color: #9c9c9c;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+/*? |-----------------------------Kanban Container-----------------------------| */
+/** Table container */
+.TablesContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.tableContet{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.tableContainerTitle label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/** principal Kanban Container */
+.kanbanContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 96.6%;
+    padding: 1rem 2rem 1rem 2rem;
+    overflow-x: auto;
+    background-color: #2c2c2c;
+    border: 1px solid #444444;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/** individual Column */
+.column {
+    flex: 0 0 300px;
+    min-width: 300px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/** Column Header */
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: rgba(45, 45, 45, 0.8);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.column-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e5e5e5;
+    margin: 0;
+}
+
+.task-count {
+    background-color: rgba(115, 115, 115, 0.6);
+    color: #d1d1d1;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/** Cards Container */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 800px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/** scrollbar */
+.cards-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.cards-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/** Cards Styles */
+.card {
+    background-color: rgba(31, 81, 97, 0.8);
+    border: 1px solid rgba(71, 133, 158, 0.6);
+    border-radius: 8px;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgba(45, 95, 115, 0.9);
+    border: 1px solid rgba(85, 145, 170, 0.8);
+    backdrop-filter: blur(15px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(31, 81, 97, 0.3);
+}
+
+/** Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-icon {
+    font-size: 20px;
+}
+
+/** Card  Info */
+.card-delete {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.card-delete:hover {
+    opacity: 1;
+    background-color: rgba(239, 68, 68, 0.2);
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-assignee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.assignee-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.assignee-name {
+    font-size: 14px;
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.card-category {
+    display: inline-block;
+    background-color: rgba(245, 101, 101, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.card-date {
+    font-size: 13px;
+    color: #b0b0b0;
+}
+
+/** Card Footer */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+/** Card Prioority */
+.card-priority {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+
+.priority-high {
+    background-color: rgba(239, 68, 68, 0.9);
+    color: white;
+}
+
+.priority-medium {
+    background-color: rgba(245, 158, 11, 0.9);
+    color: white;
+}
+
+.priority-low {
+    background-color: rgba(34, 197, 94, 0.9);
+    color: white;
+}
+
+.card-points {
+    font-size: 11px;
+    font-weight: 600;
+    color: #e5e5e5;
+}
+
+/** Add Card Btn */
+.add-card-btn {
+    background-color: transparent;
+    border: 2px dashed rgba(115, 115, 115, 0.5);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #b0b0b0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.add-card-btn:hover {
+    border-color: rgba(71, 133, 158, 0.8);
+    color: #e5e5e5;
+    background-color: rgba(31, 81, 97, 0.2);
+}
+
+/** Column Colors */
+.column-gray {
+    background-color: rgba(87, 83, 78, 0.3);
+    border: 1px solid rgba(120, 113, 108, 0.4);
+}
+
+.column-blue {
+    background-color: rgba(8, 51, 68, 0.3);
+    border: 1px solid rgba(22, 78, 99, 0.4);
+}
+
+.column-purple {
+    background-color: rgba(103, 18, 124, 0.241);
+    border: 1px solid rgba(157, 78, 221, 0.4);
+}
+
+/** Add Card Column Colors */
+.column-gray .add-card-btn:hover {
+    border-color: rgba(120, 113, 108, 0.4);
+    background-color: rgba(87, 83, 78, 0.1);
+}
+
+.column-blue .add-card-btn:hover {
+    border-color: rgba(22, 78, 99, 0.4);
+    background-color: rgba(8, 51, 68, 0.1);
+}
+
+.column-purple .add-card-btn:hover {
+    border-color: rgba(157, 78, 221, 0.4);
+    background-color: rgba(124, 45, 18, 0.1);
+}
+
+/** Card Colors */
+.column-gray .card {
+    background-color: rgba(87, 83, 78, 0.85);
+    border: 1px solid rgba(120, 113, 108, 0.3);
+}
+
+.column-gray .card:hover {
+    background-color: rgba(87, 83, 78, 0.9);
+    border: 1px solid rgba(120, 113, 108, 0.4);
+    box-shadow: 0 8px 25px rgba(87, 83, 78, 0.2);
+}
+
+.column-blue .card {
+    background-color: rgba(8, 51, 68, 0.85);
+    border: 1px solid rgba(22, 78, 99, 0.3);
+}
+
+.column-blue .card:hover {
+    background-color: rgba(8, 51, 68, 0.9);
+    border: 1px solid rgba(22, 78, 99, 0.4);
+    box-shadow: 0 8px 25px rgba(8, 51, 68, 0.2);
+}
+
+.column-purple .card {
+    background-color: rgba(87, 18, 124, 0.471);
+border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.column-purple .card:hover {
+    background-color: rgba(87, 18, 124, 0.476);
+    border: 1px solid rgba(157, 78, 221, 0.4);
+    box-shadow: 0 8px 25px rgba(124, 45, 18, 0.2);
+}
+
+/** Add btn section Container */
+.add-section-container {
+    flex: 0 0 280px;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 83px;
+}
+
+.add-section-btn {
+    width: 100%;
+    background-color: rgba(45, 45, 45, 0.6);
+    border: 2px dashed rgba(115, 115, 115, 0.4);
+    border-radius: 8px;
+    padding: 16px 20px;
+    color: #b0b0b0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.add-section-btn:hover {
+    border-color: rgba(71, 133, 158, 0.6);
+    color: #e5e5e5;
+    background-color: rgba(31, 81, 97, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/*? |-----------------------------Add Tables Button-----------------------------| */
+.addTableBtnContainer{
+    padding: 1rem 0 2rem 2rem;
+}
+
+.addTableBtn{
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgba(31, 81, 97, 0.8);  
+    border: 1px solid rgba(71, 133, 158, 0.6);  
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.addTableBtn:hover{
+    background-color: rgba(45, 95, 115, 0.9);  
+    border: 1px solid rgba(85, 145, 170, 0.8);  
+    backdrop-filter: blur(15px);
+    transform: translateY(-1px);  
+    box-shadow: 0 4px 15px rgba(31, 81, 97, 0.4);  
+}

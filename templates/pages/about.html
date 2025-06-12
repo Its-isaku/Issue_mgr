@@ -1,13 +1,58 @@
 <!--? extends form base.html -->
 {% extends "base.html" %}
 
+<!--? loads static -->
+{% load static %}
+
 <!--? Title -->
 {% block title %} About {% endblock title %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-12">
-        <h1>About secction for the Mini Challenge</h1>
-        <p>testing</p>
+    <!--? about info  -->
+    <div class="aboutInfo">
+        <h1>Why choose Issue Manager?</h1>
+        <p>Designed for teams seeking simplicity and efficiency in project management.</p>
+
+        <div class="aboutCardContainer">
+            <div class="aboutCard">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Our Mission</h3>
+                <p>To simplify project management for teams of all sizes by providing intuitive tools that enhance productivity and collaboration.</p>
+            </div>
+
+            <div class="aboutCard">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Our Vision</h3>
+                <p>To be the leading platform in agile project management, democratizing access to professional management tools.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--? about stats  -->
+    <div class="aboutStats">
+        <h1>What makes us difrent?</h1>
+        
+        <div class="aboutCardContainer">
+            <div class="statCard icon1">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Simplicity</h3>
+                <p>A clean, easy-to-use interface that requires no extensive training.s</p>
+            </div>
+            
+            <div class="statCard icon2">
+                <i class="fa-solid fa-gear"></i>
+                <h3>Flexibility</h3>
+                <p>Adaptable to different methodologies and workflows.</p>
+            </div>
+            
+            <div class="statCard icon3">
+                <i class="fa-solid fa-shield"></i>
+                <h3>Reliability</h3>
+                <p>A stable and secure platform for your most important data.</p>
+            </div>
+        </div>
     </div>
 {% endblock content %}
+
+<!--? Footer -->
+{% block footer %} {% endblock footer %}
