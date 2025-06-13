@@ -34,7 +34,10 @@
 /** Table container */
 .TablesContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .tableContet{
@@ -53,7 +56,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: 96.6%;
+    width: 70%;
     padding: 1rem 2rem 1rem 2rem;
     overflow-x: auto;
     background-color: #2c2c2c;
@@ -65,8 +68,7 @@
 
 /** individual Column */
 .column {
-    flex: 0 0 300px;
-    min-width: 300px;
+    flex: 0 0 410px;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -107,8 +109,10 @@
     flex-direction: column;
     gap: 12px;
     max-height: 800px;
+    min-height: 100px;
     overflow-y: auto;
-    padding-right: 4px;
+    padding: 8px 4px 8px 0;
+    position: relative;
 }
 
 /** scrollbar */
@@ -139,14 +143,6 @@
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     cursor: pointer;
-}
-
-.card:hover {
-    background-color: rgba(45, 95, 115, 0.9);
-    border: 1px solid rgba(85, 145, 170, 0.8);
-    backdrop-filter: blur(15px);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(31, 81, 97, 0.3);
 }
 
 /** Card Header */
@@ -242,11 +238,23 @@
 
 /** Card Prioority */
 .card-priority {
-    font-size: 9px;
-    font-weight: 700;
-    padding: 2px 5px;
-    border-radius: 3px;
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 60px;
+    color: #ffffff;
+    font-size: .8rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.priority-critical {
+    background-color: rgba(150, 9, 237, 0.9);
+    color: white;
 }
 
 .priority-high {
@@ -265,9 +273,20 @@
 }
 
 .card-points {
-    font-size: 11px;
-    font-weight: 600;
-    color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 30px;
+    background-color: rgba(31, 81, 97, 0.8);
+    color: #ffffff;
+    font-size: .8rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    
 }
 
 /** Add Card Btn */
@@ -293,68 +312,65 @@
 
 /** Column Colors */
 .column-gray {
-    background-color: rgba(87, 83, 78, 0.3);
-    border: 1px solid rgba(120, 113, 108, 0.4);
+    background-color: rgba(55, 65, 81, 0.3);
+    border: 1px solid rgba(107, 114, 128, 0.4);
 }
 
-.column-blue {
-    background-color: rgba(8, 51, 68, 0.3);
-    border: 1px solid rgba(22, 78, 99, 0.4);
+.column-red {
+    background-color: rgba(127, 29, 29, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.4);
 }
 
-.column-purple {
-    background-color: rgba(103, 18, 124, 0.241);
-    border: 1px solid rgba(157, 78, 221, 0.4);
+.column-orange {
+    background-color: rgba(154, 52, 18, 0.3);
+    border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.column-green {
+    background-color: rgba(22, 101, 52, 0.3);
+    border: 1px solid rgba(34, 197, 94, 0.4);
 }
 
 /** Add Card Column Colors */
 .column-gray .add-card-btn:hover {
-    border-color: rgba(120, 113, 108, 0.4);
-    background-color: rgba(87, 83, 78, 0.1);
+    border-color: rgba(107, 114, 128, 0.4);
+    background-color: rgba(55, 65, 81, 0.1);
 }
 
-.column-blue .add-card-btn:hover {
-    border-color: rgba(22, 78, 99, 0.4);
-    background-color: rgba(8, 51, 68, 0.1);
+.column-red .add-card-btn:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    background-color: rgba(127, 29, 29, 0.1);
 }
 
-.column-purple .add-card-btn:hover {
-    border-color: rgba(157, 78, 221, 0.4);
-    background-color: rgba(124, 45, 18, 0.1);
+.column-orange .add-card-btn:hover {
+    border-color: rgba(249, 115, 22, 0.4);
+    background-color: rgba(154, 52, 18, 0.1);
+}
+
+.column-green .add-card-btn:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+    background-color: rgba(22, 101, 52, 0.1);
 }
 
 /** Card Colors */
 .column-gray .card {
-    background-color: rgba(87, 83, 78, 0.85);
-    border: 1px solid rgba(120, 113, 108, 0.3);
+    background-color: rgba(55, 65, 81, 0.85);
+    border: 1px solid rgba(107, 114, 128, 0.3);
 }
 
-.column-gray .card:hover {
-    background-color: rgba(87, 83, 78, 0.9);
-    border: 1px solid rgba(120, 113, 108, 0.4);
-    box-shadow: 0 8px 25px rgba(87, 83, 78, 0.2);
+.column-red .card {
+    background-color: rgba(127, 29, 29, 0.85);
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.column-blue .card {
-    background-color: rgba(8, 51, 68, 0.85);
-    border: 1px solid rgba(22, 78, 99, 0.3);
+.column-orange .card {
+    background-color: rgba(154, 52, 18, 0.85);
+    border: 1px solid rgba(249, 115, 22, 0.3);
 }
 
-.column-blue .card:hover {
-    background-color: rgba(8, 51, 68, 0.9);
-    border: 1px solid rgba(22, 78, 99, 0.4);
-    box-shadow: 0 8px 25px rgba(8, 51, 68, 0.2);
-}
-
-.column-purple .card {
-    background-color: rgba(87, 18, 124, 0.471);
-border: 1px solid rgba(157, 78, 221, 0.3);
-}
-
-.column-purple .card:hover {
-    background-color: rgba(87, 18, 124, 0.476);
-    border: 1px solid rgba(157, 78, 221, 0.4);
-    box-shadow: 0 8px 25px rgba(124, 45, 18, 0.2);
+.column-green .card {
+    background-color: rgba(22, 101, 52, 0.85);
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 /** Add btn section Container */
@@ -386,9 +402,55 @@ border: 1px solid rgba(157, 78, 221, 0.3);
     backdrop-filter: blur(10px);
 }
 
+/** Details Button */
+.DetailsBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 30px;
+    background-color: rgba(31, 81, 97, 0.8);
+    color: #ffffff;
+    font-size: .8rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.DetailsBtn:hover {
+    background-color: rgba(45, 95, 115, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(31, 81, 97, 0.3);
+}
+
+/** Delete Button */
+.DeleteCardBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(233, 150, 142, 0.13);
+    font-size: .8rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.DeleteCardBtn:hover {
+    background-color: rgba(239, 68, 68, 0.8);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
 /*? |-----------------------------Add Tables Button-----------------------------| */
 .addTableBtnContainer{
-    padding: 1rem 0 2rem 2rem;
+    padding: 1rem 0 2rem 18rem;
 }
 
 .addTableBtn{
@@ -408,4 +470,123 @@ border: 1px solid rgba(157, 78, 221, 0.3);
     backdrop-filter: blur(15px);
     transform: translateY(-1px);  
     box-shadow: 0 4px 15px rgba(31, 81, 97, 0.4);  
+}
+
+/*? |-----------------------------Drag and Drop Styles-----------------------------| */
+/** Dragging card styles */
+.card.dragging {
+    opacity: 0.5;
+    transform: rotate(2deg);
+    z-index: 1000;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: none; /* Remove transitions during drag */
+}
+
+/** Cards container base styles for drag and drop */
+.cards-container {
+    transition: all 0.2s ease;
+    min-height: 120px; /* Ensure there's always a drop zone, even for empty containers */
+}
+
+/** Drop zone highlight styles */
+.cards-container.drag-over {
+    background-color: rgba(71, 133, 158, 0.1);
+    border: 2px dashed rgba(71, 133, 158, 0.5);
+    border-radius: 8px;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/** Empty container styling for better drop target visibility */
+.cards-container:empty {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    min-height: 120px;
+}
+
+.cards-container:empty.drag-over {
+    background-color: rgba(71, 133, 158, 0.15);
+    border: 2px dashed rgba(71, 133, 158, 0.7);
+    min-height: 120px;
+}
+
+/** Column-specific drag over styles */
+.column-red .cards-container.drag-over {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+.column-orange .cards-container.drag-over {
+    background-color: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.5);
+}
+
+.column-green .cards-container.drag-over {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.5);
+}
+
+.column-gray .cards-container.drag-over {
+    background-color: rgba(107, 114, 128, 0.1);
+    border-color: rgba(107, 114, 128, 0.5);
+}
+
+/** Column-specific empty container styles */
+.column-red .cards-container:empty {
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.column-red .cards-container:empty.drag-over {
+    background-color: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.7);
+}
+
+.column-orange .cards-container:empty {
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+.column-orange .cards-container:empty.drag-over {
+    background-color: rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.7);
+}
+
+.column-green .cards-container:empty {
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+.column-green .cards-container:empty.drag-over {
+    background-color: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.7);
+}
+
+.column-gray .cards-container:empty {
+    border-color: rgba(107, 114, 128, 0.2);
+}
+
+.column-gray .cards-container:empty.drag-over {
+    background-color: rgba(107, 114, 128, 0.15);
+    border-color: rgba(107, 114, 128, 0.7);
+}
+
+/** Card drag cursor */
+.card[draggable="true"] {
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card[draggable="true"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+/** Notification styles */
+.notification {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
