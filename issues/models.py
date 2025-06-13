@@ -8,6 +8,18 @@ from accounts.models import Team
 #? Model for Board
 class Board(models.Model):
     name = models.CharField(max_length=128)                      #* Name of the board
+    created_by = models.ForeignKey(                              #* User who created the board
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='created_boards',
+        null=True,
+        blank=True
+    )
+    created_on = models.DateTimeField(
+        auto_now_add=True,
+        null=True,
+        blank=True
+        )                                                        #* Timestamp when the board was created
     
     def __str__(self):                                           #* String representation of the board
         return self.name

@@ -26,12 +26,14 @@
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <!--? issues list Css -->
     <link rel="stylesheet" href="{% static 'css/issues_list.css' %}">
+    <!--? Auth Css -->
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
 </head>
 <body>
     <!--? Navigation bar -->
     <nav class="navbar">
         <!--~ Navbar logo - Section -->
-        <div class="LogoName">
+        <div class="navbarLogo">
             <i class="fa-solid fa-layer-group"></i>
             <a href="{% url 'home' %}">Issue Manager</a>
         </div>
@@ -39,15 +41,12 @@
         <!--~Principal Links - Section -->
         <div class="principalLinks">
             {% if not user.is_authenticated %}
-                <a class="navStart" href="{% url 'home' %}">Home</a>
-                <div class="navDivision"></div>
-                <a class="navEnd" href="{% url 'about' %}">About</a>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
             {% else %}
-                <a class="navStart" href="{% url 'home' %}">Home</a>
-                <div class="navDivision"></div>
-                <a class="navMiddle" href="{% url 'issues_list' %}">Issues tables</a>
-                <div class="navDivision"></div>
-                <a class="navEnd" href="{% url 'about' %}">About</a>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'issues_list' %}">Issues tables</a>
+                <a href="{% url 'about' %}">About</a>
             {% endif %}
         </div>
             
@@ -57,17 +56,15 @@
         
         <div class="loginLinks">
                 <!--* User -->
-                <div class="user navStart">
+                <div class="user">
                     <i class="fa-solid fa-user"></i>
                     <p>{{ user.username }}<span> - </span>{{ user.team }}</p>
                 </div>
-                <div class="navDivision"></div>
 
-                <a class="navMiddle" href="{% url 'password_change' %}">Change password</a>
-                <div class="navDivision"></div>
+                <a href="{% url 'password_change' %}">Change password</a>
 
                 <!--* Logout -->
-                <form method="POST" action="{% url 'logout' %}" class="navEnd">
+                <form method="POST" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <button class="logoutBtn" type="submit" >Logout</button>
                 </form>
@@ -75,11 +72,9 @@
         {% else %}
             <!--* Authentication links for non-logged users -->
             <div class="loginLinks">
-                <a class="navStart" href="{% url 'signup' %}">Sign up</a>
-                <div class="navDivision"></div>
-                <a class="navMiddle" href="{% url 'login' %}">Log in</a>
-                <div class="navDivision"></div>
-                <a class="navEnd" href="{% url 'password_reset' %}">Reset password</a>
+                <a href="{% url 'signup' %}">Sign up</a>
+                <a href="{% url 'login' %}">Log in</a>
+                <a href="{% url 'password_reset' %}">Reset password</a>
             </div>
         {% endif %}
     </nav>
@@ -88,13 +83,16 @@
     {% block content %} {% endblock content %}
 
     <!--? Footer -->
-    <!-- {% block footer %}
+    {% block footer %}
         <footer class="footer">
             <div class="container">
-                <p class="text-center">© 2023 Issue Manager. All rights reserved.</p>
+                <p class="text-center">© 2025 Issue Manager. All rights reserved.</p>
+            </div>
+            <div class="container">
+                <p class="text-center">Made by Isai(with some AI help)</p>
             </div>
         </footer>
-    {% endblock footer %} -->
+    {% endblock footer %}
 
     <!--? Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

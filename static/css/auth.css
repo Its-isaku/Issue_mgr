@@ -1,0 +1,225 @@
+/*? Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem 1rem;
+}
+
+.form-wrapper {
+    background-color: #2c2c2c;
+    border: 1px solid #444444;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*? Form Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    background-clip: text;
+}
+
+/*? Form Body */
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/*? Form Fields */
+.form-body form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-body form label {
+    color: #e5e5e5;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-body form input[type="text"],
+.form-body form input[type="email"],
+.form-body form input[type="password"],
+.form-body form select {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-body form input[type="text"]:focus,
+.form-body form input[type="email"]:focus,
+.form-body form input[type="password"]:focus,
+.form-body form select:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-body form input[type="text"]::placeholder,
+.form-body form input[type="email"]::placeholder,
+.form-body form input[type="password"]::placeholder {
+    color: #999999;
+}
+
+/*? Select Specific Styles */
+.form-body form select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ffffff" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.65rem;
+    cursor: pointer;
+}
+
+.form-body form select option {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 0.5rem;
+}
+
+.form-body form select option:hover,
+.form-body form select option:checked {
+    background-color: #0ea5e9;
+    color: #ffffff;
+}
+
+/*? Help Text */
+.form-body form .helptext {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+/*? Error Messages */
+.form-body form .errorlist {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 0.5rem;
+    color: #ef4444;
+    font-size: 0.85rem;
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+}
+
+.form-body form .errorlist li {
+    margin: 0;
+}
+
+/*? Submit Button */
+.form-body input[type="submit"] {
+    background-color: rgba(6, 78, 59, 0.8);   
+    border: 1px solid rgba(52, 211, 153, 0.6); 
+    border-radius: 6px;
+    color: white;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-body input[type="submit"]:hover {
+    background-color: rgba(6, 95, 70, 0.9);
+    border: 1px solid rgba(52, 211, 153, 0.8);
+    backdrop-filter: blur(15px);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(31, 97, 81, 0.4);
+}
+
+.form-body input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/*? Authentication Links */
+.auth-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444444;
+}
+
+.auth-link p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.auth-link a {
+    color: #0ea5e9;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-link a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+/*? Success Messages */
+.messages {
+    margin-bottom: 1rem;
+}
+
+.messages .alert {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 0.5rem;
+    color: #22c55e;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+/*? Password Reset Specific Styles */
+.password-reset-info {
+    background-color: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    border-radius: 0.5rem;
+    color: #0ea5e9;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+/*? Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1rem 0.5rem;
+        min-height: 70vh;
+    }
+    
+    .form-wrapper {
+        max-width: 100%;
+        margin: 0 0.5rem;
+    }
+    
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+}
